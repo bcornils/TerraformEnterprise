@@ -23,24 +23,4 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-provider "aws" {
-  region = "us-east-1"
-}
 
-module "consul" {
-  source = "hashicorp/consul/aws"
-
-  num_servers = "3"
-}
-
-output "consul_server_asg_name" {
-  value = "${module.consul.asg_name_servers}"
-}
-  
-terraform {
-  backend "consul" {
-    address = "demo.consul.io"
-    path    = "getting-started-BETHTEST"
-    lock    = false
-  }
-}
