@@ -40,7 +40,7 @@ output "consul_server_asg_name" {
 terraform {
   backend "consul" {
     address = "demo.consul.io"
-    path    = "getting-started-RANDOMSTRING"
+    path    = "getting-started-BETHTEST"
     lock    = false
   }
 }
