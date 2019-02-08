@@ -26,7 +26,7 @@ data "aws_ami" "ubuntu" {
 terraform {
   backend "consul" {
     address = "demo.consul.io"
-    path    = "getting-started-BETHTESTING"
+    path    = "getting-started-BETHTESTING1"
     lock    = false
   }
 }
