@@ -22,3 +22,11 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
+
+terraform {
+  backend "consul" {
+    address = "demo.consul.io"
+    path    = "getting-started-BETHTESTING"
+    lock    = false
+  }
+}
