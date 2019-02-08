@@ -36,3 +36,11 @@ module "consul" {
 output "consul_server_asg_name" {
   value = "${module.consul.asg_name_servers}"
 }
+  
+terraform {
+  backend "consul" {
+    address = "demo.consul.io"
+    path    = "getting-started-RANDOMSTRING"
+    lock    = false
+  }
+}
